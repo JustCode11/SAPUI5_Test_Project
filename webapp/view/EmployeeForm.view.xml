@@ -1,0 +1,36 @@
+<mvc:View xmlns:core="sap.ui.core"
+controllerName="sap.ui.test.controller.EmployeeForm"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <Panel headerText="{i18n>employeeFormHeaderText}">
+            <form:SimpleForm editable="true" layout="ColumnLayout">
+                <Label text="First Name"/>
+                <Input value="{/first_name}" width="200px" />
+                <Label text="Last Name"/>
+                <Input value="{/last_name}" width="200px" />
+                <Label text="Email"/>
+                <Input value="{/email}" width="200px"/>
+                <Label text="Gender"/>
+                <Select width="200px">
+                    <items>
+                        <core:Item text="Male" key="male"></core:Item>
+                        <core:Item text="Female" key="female"></core:Item>
+                        <core:Item text="Other" key="other"></core:Item>
+                    </items>
+                </Select>
+                <Label text="IP Address"/>
+                <Input value="{/ip_address}" width="200px"/>
+            </form:SimpleForm>
+            <VBox width="100%" alignItems="Center">
+                <Button 
+                icon="sap-icon://save"
+                text="{i18n>employeeFormButtonText}"
+                press=".onSaveEmployee"></Button>
+            </VBox>
+        </Panel>
+    </Page>
+</mvc:View>

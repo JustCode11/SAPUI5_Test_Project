@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="sap.ui.test.controller.EmployeeList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <List 
+        headerText="{i18n>employeeListTitle}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{employee>/Employees}">
+        <items>
+            <ObjectListItem 
+            title="{employee>first_name} {employee>last_name}"
+            type="Navigation"
+            press="onPress">
+                <firstStatus>
+                    <ObjectStatus 
+                    title="Status"
+                        text="{
+                            path: 'employee>status',
+                            formatter: '.formatter.statusText'
+                        }"/>
+                </firstStatus>
+            </ObjectListItem>
+        </items>    
+    </List>
+</mvc:View>

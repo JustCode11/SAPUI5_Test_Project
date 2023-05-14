@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="sap.ui.test.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>overviewPage}">
+    <headerContent>
+        <Button
+            icon="sap-icon://write-new"
+            text="Create Employee"
+            press=".onOpenEmployeeForm" />
+    </headerContent>
+        <content>
+            <mvc:XMLView viewName="sap.ui.test.view.EmployeeList" />
+        </content>
+    </Page>
+</mvc:View>
