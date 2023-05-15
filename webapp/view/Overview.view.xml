@@ -10,7 +10,8 @@
             press=".onOpenEmployeeForm" />
     </headerContent>
         <content>
-            <mvc:XMLView viewName="sap.ui.test.view.EmployeeList" />
+            <!--<mvc:XMLView viewName="sap.ui.test.view.EmployeeList" />-->
+            <mvc:XMLView viewName="sap.ui.test.view.EmployeeTable" />
         </content>
     </Page>
 </mvc:View>

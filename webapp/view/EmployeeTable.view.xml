@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="sap.ui.test.controller.EmployeeTable"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Table
+        id="employeeTable"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        mode="SingleSelect"
+        items="{employee>/Employees}">
+        <headerToolbar>
+            <OverflowToolbar>
+                <Button text="Delete" press="onDelete" />
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="Id" />
+            </Column>
+            <Column>
+                <Text text="First Name" />
+            </Column>
+            <Column>
+                <Text text="Last Name" />
+            </Column>
+            <Column>
+                <Text text="E-Mail" />
+            </Column>
+            <Column>
+                <Text text="Gender" />
+            </Column>
+            <Column>
+                <Text text="IP Address" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{employee>id}" />
+                    <Text text="{employee>first_name}" />
+                    <Text text="{employee>last_name}" />
+                    <Text text="{employee>email}" />
+                    <Text text="{employee>gender}" />
+                    <Text text="{employee>ip_address}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>
