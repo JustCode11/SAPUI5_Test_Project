@@ -7,6 +7,7 @@ sap.ui.define([
         formatter: formatter,
 
         onPress: function (oEvent) {
+            console.log(test);
             var oItem = oEvent.getSource();
             var oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("detail", {
