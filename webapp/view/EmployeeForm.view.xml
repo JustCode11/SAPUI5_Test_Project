@@ -15,12 +15,14 @@ controllerName="sap.ui.test.controller.EmployeeForm"
                 <Label text="Email"/>
                 <Input value="{/email}" width="200px"/>
                 <Label text="Gender"/>
-                <Select width="200px">
-                    <items>
-                        <core:Item text="Male" key="male"></core:Item>
-                        <core:Item text="Female" key="female"></core:Item>
-                        <core:Item text="Other" key="other"></core:Item>
-                    </items>
+                <Select 
+                    width="200px"
+                    selectedKey="{sModel>/selectedGender}"
+                    change="onChange"
+                    items="{
+                        path: 'sModel>/genders'
+                    }">
+                    <core:Item key="{sModel>GenderId}" text="{sModel>Name}" />
                 </Select>
                 <Label text="IP Address"/>
                 <Input value="{/ip_address}" width="200px"/>

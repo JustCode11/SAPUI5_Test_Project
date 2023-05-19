@@ -8,6 +8,11 @@
         "description": "{{appDescription}}",
         "applicationVersion": {
             "version": "1.0.0"
+        },
+        "sourceTemplate": {
+            "id": "@sap/ux-app-migrator:freestyle",
+            "version": "1.9.6",
+            "toolsId": "c6e8bd16-397a-48a3-bae2-404e059e3c14"
         }
     },
     "sap.ui": {
@@ -25,7 +30,7 @@
             "id": "app"
         },
         "dependencies": {
-            "minUI5Version": "1.93",
+            "minUI5Version": "1.93.0",
             "libs": {
                 "sap.ui.core": {},
                 "sap.m": {}

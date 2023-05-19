@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",
-    "sap/ui/model/json/JSONModel"
-], function (Controller, History, JSONModel) {
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageToast"
+], function (Controller, History, JSONModel, MessageToast) {
     "use strict";
 
     return Controller.extend("sap.ui.test.controller.EmployeeForm", {
@@ -11,13 +12,31 @@ sap.ui.define([
             var modelLength = model.oData.Employees.length + 1;
             var oModel = new JSONModel({
                 id: modelLength,
-                first_name: "John",
+                first_name: "",
                 last_name: "",
                 email: "",
-                gender: "",
+                gender: "Male",
                 ip_address: "",
                 status: "work"
             });
+            var selectFieldModel = new JSONModel({
+                selectedGender: "1",
+                genders: [
+                    {
+                        GenderId: "1",
+                        Name: "Male"
+                    },
+                    {
+                        GenderId: "2",
+                        Name: "Female"
+                    },
+                    {
+                        GenderId: "3",
+                        Name: "Other"
+                    }
+                ]
+            })
+            this.getView().setModel(selectFieldModel, "sModel");
             this.getView().setModel(oModel);
         },
         onNavBack: function () {
@@ -30,6 +49,10 @@ sap.ui.define([
                 var oRouter = this.getOwnerComponent().getRouter();
                 oRouter.navTo("overview", {}, true);
             }
+        },
+        onChange: function (oEvent) {
+            var newGender = oEvent.getParameters().selectedItem.mProperties.text;
+            this.getView().getModel().setProperty("/gender", newGender);
         },
         onSaveEmployee: function () {
             var newItem = this.getView().getModel().oData;

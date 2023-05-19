@@ -6,18 +6,22 @@
         id="employeeTable"
         class="sapUiResponsiveMargin"
         width="auto"
-        mode="SingleSelect"
+        mode="MultiSelect"
         items="{employee>/Employees}">
         <headerToolbar>
             <OverflowToolbar>
-                <Button text="Delete" press="onDelete" />
+            <Title text="Persons" />
+            <ToolbarSpacer />
+                <SearchField width="20%" search="onSearch" value="{/last_name}"></SearchField>
+                <Button icon="sap-icon://sort" press="onSort" />
+                <Button icon="sap-icon://delete" press="onDelete" />
             </OverflowToolbar>
         </headerToolbar>
         <columns>
             <Column>
                 <Text text="Id" />
             </Column>
-            <Column>
+            <Column id="firstNameColumn">
                 <Text text="First Name" />
             </Column>
             <Column>
