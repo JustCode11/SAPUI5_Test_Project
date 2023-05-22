@@ -55,7 +55,7 @@ sap.ui.define([
 
             // load the fragment file
             // if abfrage verhindert duplicate id fehler
-            if (!this.byId("sortDialog")) {
+            /*if (!this.byId("sortDialog")) {
                 Fragment.load({
                     id: oView.getId(),
                     name: "sap.ui.test.fragment.SortDialog",
@@ -68,7 +68,13 @@ sap.ui.define([
                 });
             } else {
                 this.byId("sortDialog").open();
+            }*/
+            if (!this._oSortDialog) {
+                this._oSortDialog = await this.loadFragment({
+                    name: "sap.ui.test.fragment.SortDialog"
+                });
             }
+            this._oSortDialog.open();
         },
         handleSortDialogConfirm: function (oEvent) {
             /*var oTable = this.byId("employeeTable"),
@@ -92,31 +98,64 @@ sap.ui.define([
             if (oSortItem) {
                 sColumnPath = oSortItem.getKey();
             }
-            console.log(oSortItem);
-            console.log(sColumnPath);
-            console.log(bDescending);
-            console.log(aSorters);
-            aSorters.push(new Sorter(sColumnPath, bDescending));
+            aSorters.push(new sap.ui.model.Sorter(sColumnPath, bDescending));
 
             var oTable = this.byId("employeeTable");
             var oBinding = oTable.getBinding("items");
 
             oBinding.sort(aSorters);
-            var model = this.getOwnerComponent().getModel("employee");
-            model.refresh();
         },
         onSearch: function (oEvent) {
             var aFilters = [];
             var sQuery = oEvent.getParameter("query");
 
             if (sQuery) {
-                aFilters.push(new Filter("last_name", FilterOperator.Contains, sQuery));
+                aFilters.push(new sap.ui.model.Filter("last_name", FilterOperator.Contains, sQuery));
             }
 
             var oTable = this.byId("employeeTable");
             var oBinding = oTable.getBinding("items");
 
             oBinding.filter(aFilters);
+        },
+        onGroup: async function () {
+            if (!this._oGroupDialog) {
+                this._oGroupDialog = await this.loadFragment({
+                    name: "sap.ui.test.fragment.GroupDialog"
+                });
+            }
+            this._oGroupDialog.open();
+        },
+        onGroupDialogConfirm: function (oEvent) {
+            var oSortItem = oEvent.getParameter("groupItem");
+            var sColumnPath = "id";
+            var bDescending = oEvent.getParameter("groupDescending");
+            var aSorters = [];
+            var bGroupEnabled = false;
+
+            if (oSortItem) {
+                sColumnPath = oSortItem.getKey();
+                bGroupEnabled = true;
+            }
+            aSorters.push(new sap.ui.model.Sorter(sColumnPath, bDescending, bGroupEnabled));
+
+            var oTable = this.byId("employeeTable");
+            var oBinding = oTable.getBinding("items");
+
+            oBinding.sort(aSorters);
+        },
+        onItemPress: function (oEvent) {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            var oItem = oEvent.getSource();
+            //debugger;
+            /*oRouter.navTo("detail", {
+                id: oItem.getBindingContext("employee").getObject().id
+            });*/ // der erste Parameter soll dem namen im manifest unter routes entsprechen
+
+            oRouter.navTo("detail", {
+                last_name: oItem.getBindingContext("employee").getObject().last_name
+            });
+
         }
     });
 });

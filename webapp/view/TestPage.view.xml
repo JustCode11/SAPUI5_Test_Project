@@ -1,0 +1,33 @@
+<mvc:View
+    controllerName="sap.ui.test.controller.TestPage"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page 
+        id="Page"
+        title="{i18n>testPageTitle}"
+        backgroundDesign="Solid"
+        navButtonTooltip="Go back"
+        showNavButton="true"
+        navButtonPress="goBack"
+        titleAlignment="Center"
+        titleLevel="H1">
+        <headerContent> <!-- Rechte Seite vom Header -->
+            <Text text="hello"></Text>
+        </headerContent>
+        <content>
+            <List
+                headerText="Companies"
+                items="{company>/CompanySet/Companies}">
+                <StandardListItem 
+                    title="{company>Name}" />
+            </List>
+        </content>
+        <footer>
+            <Bar>
+                <contentMiddle>
+                    <Text text="Page Footer"></Text>
+                </contentMiddle>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

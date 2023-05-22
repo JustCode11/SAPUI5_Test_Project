@@ -8,6 +8,9 @@
             icon="sap-icon://write-new"
             text="Create Employee"
             press=".onOpenEmployeeForm" />
+        <Button 
+            text="Go to Test Page"
+            press=".goToTestPage" />
     </headerContent>
         <content>
             <!--<mvc:XMLView viewName="sap.ui.test.view.EmployeeList" />-->

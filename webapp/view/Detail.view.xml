@@ -7,7 +7,7 @@ controllerName="sap.ui.test.controller.Detail"
         showNavButton="true"
         navButtonPress=".onNavBack">
         <ObjectHeader
-            intro="Employee: {employee>last_name}"
+            intro="Employee: {employee>first_name} {employee>last_name}"
             title="{employee>email}" />  
     </Page>
 </mvc:View>

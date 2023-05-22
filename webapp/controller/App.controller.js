@@ -1,8 +1,8 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+    "sap/ui/test/controller/BaseController"
+], function (BaseController) {
     "use strict";
-    return Controller.extend("sap.ui.test.controller.App", {
+    return BaseController.extend("sap.ui.test.controller.App", {
         onShowHello: function () {
             // show a native JavaScript alert
             alert("Hello World");
@@ -10,6 +10,10 @@ sap.ui.define([
         onOpenEmployeeForm: function () {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.navTo("employeeForm", true);
+        },
+        goToTestPage: function () {
+            var oRouter = this.getRouter();
+            oRouter.navTo("testPage", true);
         }
     });
 });

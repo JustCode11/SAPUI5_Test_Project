@@ -15,13 +15,14 @@
                 <SearchField width="20%" search="onSearch" value="{/last_name}"></SearchField>
                 <Button icon="sap-icon://sort" press="onSort" />
                 <Button icon="sap-icon://delete" press="onDelete" />
+                <Button icon="sap-icon://group-2" press="onGroup" tooltip="Group" />
             </OverflowToolbar>
         </headerToolbar>
         <columns>
             <Column>
                 <Text text="Id" />
             </Column>
-            <Column id="firstNameColumn">
+            <Column>
                 <Text text="First Name" />
             </Column>
             <Column>
@@ -38,7 +39,7 @@
             </Column>
         </columns>
         <items>
-            <ColumnListItem>
+            <ColumnListItem type="Navigation" press="onItemPress">
                 <cells>
                     <Text text="{employee>id}" />
                     <Text text="{employee>first_name}" />
