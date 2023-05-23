@@ -1,0 +1,12 @@
+.myIconTabBar .sapMITBItem:not(.sapMITBSelected) .sapMITBText {
+    color: orange !important;
+    /* Set the desired text color */
+}
+
+.myIconTabBar .sapMITBSelected .sapMITBText {
+    color: purple !important;
+}
+
+.myIconTabBar .sapMITBSelected .sapMITBContentArrow::after {
+    background: purple !important;
+}

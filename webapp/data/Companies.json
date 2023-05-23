@@ -1,96 +1,90 @@
 {
     "CompanySet": {
-        "Companies": [
-            {
+        "Companies": {
+            "Company('112')": {
                 "Id": "112",
                 "Name": "Company A",
                 "Street": "Company A Street",
                 "Number": "233",
                 "City": "London",
                 "NumberOfProducts": "3",
-                "ToProducts": [
-                    {
-                        "Product('30')": {
-                            "Id": "30",
-                            "Name": "Shoe",
-                            "Price": "12.33",
-                            "Currency": "USD"
-                        },
-                        "Product('31')": {
-                            "Id": "31",
-                            "Name": "Hat",
-                            "Price": "19.55",
-                            "Currency": "USD"
-                        },
-                        "Product('32')": {
-                            "Id": "32",
-                            "Name": "Belt",
-                            "Price": "6.99",
-                            "Currency": "USD"
-                        }
+                "ToProducts": {
+                    "Product('30')": {
+                        "Id": "30",
+                        "Name": "Shoe",
+                        "Price": "12.33",
+                        "Currency": "USD"
+                    },
+                    "Product('31')": {
+                        "Id": "31",
+                        "Name": "Hat",
+                        "Price": "19.55",
+                        "Currency": "USD"
+                    },
+                    "Product('32')": {
+                        "Id": "32",
+                        "Name": "Belt",
+                        "Price": "6.99",
+                        "Currency": "USD"
                     }
-                ]
+                }
             },
-            {
+            "Company('233')": {
                 "Id": "233",
                 "Name": "Company B",
                 "Street": "Company B Street",
                 "Number": "556",
                 "City": "London",
                 "NumberOfProducts": "2",
-                "ToProducts": [
-                    {
-                        "Product('76')": {
-                            "Id": "76",
-                            "Name": "Tomatoe",
-                            "Price": "2.10",
-                            "Currency": "USD"
-                        },
-                        "Product('77')": {
-                            "Id": "77",
-                            "Name": "Cucumber",
-                            "Price": "3.54",
-                            "Currency": "USD"
-                        }
+                "ToProducts": {
+                    "Product('76')": {
+                        "Id": "76",
+                        "Name": "Tomatoe",
+                        "Price": "2.10",
+                        "Currency": "USD"
+                    },
+                    "Product('77')": {
+                        "Id": "77",
+                        "Name": "Cucumber",
+                        "Price": "3.54",
+                        "Currency": "USD"
                     }
-                ]
+                }
             },
-            {
+            "Company('301')": {
                 "Id": "301",
                 "Name": "Company C",
                 "Street": "Company C Street",
                 "Number": "10",
                 "City": "New York",
                 "NumberOfProducts": "4",
-                "ToProducts": [
-                    {
-                        "Product('466')": {
-                            "Id": "466",
-                            "Name": "Banana",
-                            "Price": "3.40",
-                            "Currency": "USD"
-                        },
-                        "Product('467')": {
-                            "Id": "467",
-                            "Name": "Apple",
-                            "Price": "0.78",
-                            "Currency": "USD"
-                        },
-                        "Product('468')": {
-                            "Id": "468",
-                            "Name": "Orange",
-                            "Price": "1.39",
-                            "Currency": "USD"
-                        },
-                        "Product('469')": {
-                            "Id": "469",
-                            "Name": "Mango",
-                            "Price": "6.12",
-                            "Currency": "USD"
-                        }
+                "ToProducts": {
+                    "Product('466')": {
+                        "Id": "466",
+                        "Name": "Banana",
+                        "Price": "3.40",
+                        "Currency": "USD"
+                    },
+                    "Product('467')": {
+                        "Id": "467",
+                        "Name": "Apple",
+                        "Price": "0.78",
+                        "Currency": "USD"
+                    },
+                    "Product('468')": {
+                        "Id": "468",
+                        "Name": "Orange",
+                        "Price": "1.39",
+                        "Currency": "USD"
+                    },
+                    "Product('469')": {
+                        "Id": "469",
+                        "Name": "Mango",
+                        "Price": "6.12",
+                        "Currency": "USD"
                     }
-                ]
+                }
             }
-        ]
+        }
     }
 }
