@@ -1,71 +1,97 @@
 <mvc:View
-    controllerName="sap.ui.test.controller.TestPage"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page 
-        id="Page"
-        title="{i18n>testPageTitle}"
-        backgroundDesign="Solid"
-        navButtonTooltip="Go back"
-        showNavButton="true"
-        navButtonPress="goBack"
-        titleAlignment="Center"
-        titleLevel="H1">
-        <headerContent> <!-- Rechte Seite vom Header -->
-            <Text text="hello"></Text>
-        </headerContent>
-        <content>
-            <IconTabBar class="myIconTabBar">
-                <items>
-                    <IconTabFilter text="Tab 1" class="customTextColor">
-                        <List
-                            headerText="Companies"
-                            items="{company>/CompanySet/Companies}">
-                            <StandardListItem 
-                                title="{company>Name}" />
-                        </List>
-                    </IconTabFilter>
-                    <IconTabFilter text="Tab 2" class="customTextColor">
-                        <Table id="yourTableId" items="{
-                            path: 'company>/CompanySet/Companies', 
-                            filters: [{path: 'City', operator: 'EQ', value1: 'London'}]
-                            }">
-                            <columns>
-                                <Column>
-                                    <Text text="Name" />
-                                </Column>
-                                <Column>
-                                    <Text text="Street" />
-                                </Column>
-                                <Column>
-                                    <Text text="Number" />
-                                </Column>
-                                <Column>
-                                    <Text text="City" />
-                                </Column>
-                            </columns>
-                            <items>
-                                <ColumnListItem>
-                                    <cells>
-                                        <Text text="{company>Name}" />
-                                        <Text text="{company>Street}" />
-                                        <Text text="{company>Number}" />
-                                        <Text text="{company>City}" />
-                                    </cells>
-                                </ColumnListItem>
-                            </items>
-                        </Table>
-                    </IconTabFilter>
-                    <!-- Additional Tab Filters -->
-                </items>
-            </IconTabBar>
-        </content>
-        <footer>
-            <Bar>
-                <contentMiddle>
-                    <Text text="Page Footer"></Text>
-                </contentMiddle>
-            </Bar>
-        </footer>
-    </Page>
+	controllerName="sap.ui.test.controller.TestPage"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page
+		id="Page"
+		title="{i18n>testPageTitle}"
+		backgroundDesign="Solid"
+		navButtonTooltip="Go back"
+		showNavButton="true"
+		navButtonPress="goBack"
+		titleAlignment="Center"
+		titleLevel="H1"
+	>
+		<headerContent>
+			<!-- Rechte Seite vom Header -->
+			<Text text="hello"/>
+		</headerContent>
+		<content>
+			<IconTabBar class="myIconTabBar">
+				<items>
+					<IconTabFilter
+						text="Tab 1"
+						class="customTextColor"
+					>
+						<List
+							headerText="Companies"
+							items="{company>/CompanySet/Companies}"
+						>
+							<StandardListItem title="{company>Name}"/>
+						</List>
+					</IconTabFilter>
+					<IconTabFilter
+						text="Tab 2"
+						class="customTextColor"
+					>
+						<Table
+							id="yourTableId"
+							items="{
+								path: 'company>/CompanySet/Companies',
+								filters: [{
+									path: 'City',
+									operator: 'EQ',
+									value1: 'London'
+								}]
+							}"
+						>
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title
+											text="Company"
+											level="H2"
+										/>
+									</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="Name"/>
+								</Column>
+								<Column>
+									<Text text="Street"/>
+								</Column>
+								<Column>
+									<Text text="Number"/>
+								</Column>
+								<Column>
+									<Text text="City"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{company>Name}"/>
+										<Text text="{company>Street}"/>
+										<Text text="{company>Number}"/>
+										<Text text="{company>City}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<!-- Additional Tab Filters -->
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+					<Text text="Page Footer"/>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
 </mvc:View>
