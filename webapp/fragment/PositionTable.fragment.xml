@@ -1,0 +1,26 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+	<Table
+		id="posTable">
+        <headerToolbar>
+            <OverflowToolbar >
+                <Button text="Check Table" press="onSort"></Button>
+            </OverflowToolbar>
+        </headerToolbar>
+		<columns>
+			<Column>
+				<Text  text="Name"/>
+			</Column>
+			<Column>
+				<Text text="Age"/>
+			</Column>
+			<Column>
+				<Text text="Gender"/>
+			</Column>
+		</columns>
+		<items>
+		</items>
+	</Table>
+</c:FragmentDefinition>

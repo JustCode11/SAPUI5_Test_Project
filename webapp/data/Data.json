@@ -1,0 +1,61 @@
+{
+    "Data": {
+        "Category('01')": {
+            "Id": "01",
+            "CategoryName": "First Category",
+            "NumberOfEntries": "12",
+            "ToPosition": {
+                "User('01')": {
+                    "Id": "01",
+                    "Name": "Eduardo",
+                    "Age": "33",
+                    "Gender": "Male"
+                },
+                "User('02')": {
+                    "Id": "02",
+                    "Name": "Nicole",
+                    "Age": "30",
+                    "Gender": "Female"
+                },
+                "User('03')": {
+                    "Id": "03",
+                    "Name": "Anna",
+                    "Age": "37",
+                    "Gender": "Female"
+                }
+            }
+        },
+        "Category('02')": {
+            "Id": "02",
+            "CategoryName": "Second Category",
+            "NumberOfEntries": "144",
+            "ToPosition": {
+                "User('01')": {
+                    "Id": "01",
+                    "Name": "Ricardo",
+                    "Age": "35",
+                    "Gender": "Male"
+                },
+                "User('02')": {
+                    "Id": "02",
+                    "Name": "Thomas",
+                    "Age": "18",
+                    "Gender": "Male"
+                }
+            }
+        },
+        "Category('03')": {
+            "Id": "03",
+            "CategoryName": "First Category",
+            "NumberOfEntries": "38",
+            "ToPosition": {
+                "User('01')": {
+                    "Id": "01",
+                    "Name": "Lisa",
+                    "Age": "20",
+                    "Gender": "Female"
+                }
+            }
+        }
+    }
+}

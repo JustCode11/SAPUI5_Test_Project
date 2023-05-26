@@ -1,20 +1,27 @@
 <mvc:View
-    controllerName="sap.ui.test.controller.App"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page title="{i18n>overviewPage}">
-    <headerContent>
-        <Button
-            icon="sap-icon://write-new"
-            text="Create Employee"
-            press=".onOpenEmployeeForm" />
-        <Button 
-            text="Go to Test Page"
-            press=".goToTestPage" />
-    </headerContent>
-        <content>
-            <!--<mvc:XMLView viewName="sap.ui.test.view.EmployeeList" />-->
-            <mvc:XMLView viewName="sap.ui.test.view.EmployeeTable" />
-        </content>
-    </Page>
+	controllerName="sap.ui.test.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page title="{i18n>overviewPage}">
+		<headerContent>
+			<Button
+				icon="sap-icon://write-new"
+				text="Create Employee"
+				press=".onOpenEmployeeForm"
+			/>
+			<Button
+				text="Go to Test Page"
+				press=".goToTestPage"
+			/>
+			<Button
+				text="Go to IconTabBar Test"
+				press=".goToIconTabBarTest"
+			/>
+		</headerContent>
+		<content>
+			<!--<mvc:XMLView viewName="sap.ui.test.view.EmployeeList" />-->
+			<mvc:XMLView viewName="sap.ui.test.view.EmployeeTable"/>
+		</content>
+	</Page>
 </mvc:View>

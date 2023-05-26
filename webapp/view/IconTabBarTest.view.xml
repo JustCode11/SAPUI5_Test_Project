@@ -1,0 +1,32 @@
+<mvc:View
+	controllerName="sap.ui.test.controller.IconTabBarTest"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page
+		id="IconTabBarTestPage"
+		title="Test Icon Tab Bar"
+		backgroundDesign="Solid"
+		navButtonTooltip="Go back"
+		showNavButton="true"
+		navButtonPress="goBack"
+		titleAlignment="Center"
+		titleLevel="H1"
+	>
+		<IconTabHeader
+			id="iconTabHeader"
+			items="{/Data}"
+			class="sapUiMediumMarginBottom"
+			select=".onSelect"
+		>
+			<items>
+				<IconTabFilter
+					key="{Id}"
+					text="{CategoryName} ({NumberOfEntries})"
+				/>
+			</items>
+		</IconTabHeader>
+		<content>
+		</content>
+	</Page>
+</mvc:View>

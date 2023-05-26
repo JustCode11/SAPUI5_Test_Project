@@ -54,6 +54,10 @@
             "company": {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "data/Companies.json"
+            },
+            "": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "data/Data.json"
             }
         },
         "resources": {
@@ -92,6 +96,11 @@
                     "pattern": "testPage",
                     "name": "testPage",
                     "target": "testPage"
+                },
+                {
+                    "pattern": "iconTabBarTest",
+                    "name": "iconTabBarTest",
+                    "target": "iconTabBarTest"
                 }
             ],
             "targets": {
@@ -110,6 +119,10 @@
                 "testPage": {
                     "id": "testPage",
                     "name": "TestPage"
+                },
+                "iconTabBarTest": {
+                    "id": "iconTabBarTest",
+                    "name": "IconTabBarTest"
                 }
             }
         }

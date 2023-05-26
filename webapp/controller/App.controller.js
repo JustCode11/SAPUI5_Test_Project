@@ -14,6 +14,10 @@ sap.ui.define([
         goToTestPage: function () {
             var oRouter = this.getRouter();
             oRouter.navTo("testPage", true);
+        },
+        goToIconTabBarTest: function () {
+            var oRouter = this.getRouter();
+            oRouter.navTo("iconTabBarTest", true);
         }
     });
 });
