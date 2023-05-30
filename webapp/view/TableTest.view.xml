@@ -1,0 +1,147 @@
+<mvc:View
+	controllerName="sap.ui.test.controller.TableTest"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Table
+		id="employeeTable"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		mode="MultiSelect"
+		items="{emp>/Employees}"
+	>
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Persons"/>
+				<Button
+					text="Show Binding"
+					press=".showPersonsBinding"
+				/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Id"/>
+			</Column>
+			<Column>
+				<Text text="First Name"/>
+			</Column>
+			<Column>
+				<Text text="Last Name"/>
+			</Column>
+			<Column>
+				<Text text="E-Mail"/>
+			</Column>
+			<Column>
+				<Text text="Gender"/>
+			</Column>
+			<Column>
+				<Text text="IP Address"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem
+				type="Navigation"
+				press="employeeSelected"
+			>
+				<cells>
+					<Text text="{emp>id}"/>
+					<Text text="{emp>first_name}"/>
+					<Text text="{emp>last_name}"/>
+					<Text text="{emp>email}"/>
+					<Text text="{emp>gender}"/>
+					<Text text="{emp>ip_address}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Table
+		id="companyTable"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		mode="MultiSelect"
+		items="{company>/CompanySet/Companies}"
+	>
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Companies"/>
+				<Button
+					text="Show Binding"
+					press=".showCompanyBinding"
+				/>
+				<Button
+					text="Show Selected Items"
+					press=".showCompanyItems"
+				/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Name"/>
+			</Column>
+			<Column>
+				<Text text="Street"/>
+			</Column>
+			<Column>
+				<Text text="Number"/>
+			</Column>
+			<Column>
+				<Text text="City"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{company>Name}"/>
+					<Text text="{company>Street}"/>
+					<Text text="{company>Number}"/>
+					<Text text="{company>City}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Table
+		id="categoryTable"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		mode="MultiSelect"
+		items="{/Data}"
+	>
+		<headerToolbar>
+			<OverflowToolbar>
+				<Title text="Categories"/>
+				<Button
+					text="Show Binding"
+					press=".showCategoryBinding"
+				/>
+				<Button
+					text="Delete selected Items"
+					press=".deleteItems"
+				/>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Id"/>
+			</Column>
+			<Column>
+				<Text text="CategoryName"/>
+			</Column>
+			<Column>
+				<Text text="NumberOfEntries"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{Id}"/>
+					<Text text="{CategoryName}"/>
+					<Text text="{NumberOfEntries}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<!--"Id": "01",
+            "CategoryName": "First Category",
+            "NumberOfEntries": "12",-->
+</mvc:View>

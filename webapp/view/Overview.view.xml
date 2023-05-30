@@ -18,6 +18,10 @@
 				text="Go to IconTabBar Test"
 				press=".goToIconTabBarTest"
 			/>
+			<Button
+				text="Go to TableTest"
+				press=".goToTableTest"
+			/>
 		</headerContent>
 		<content>
 			<!--<mvc:XMLView viewName="sap.ui.test.view.EmployeeList" />-->

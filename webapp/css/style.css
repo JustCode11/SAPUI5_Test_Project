@@ -10,3 +10,7 @@
 .myIconTabBar .sapMITBSelected .sapMITBContentArrow::after {
     background: purple !important;
 }
+
+.sapMITH {
+    box-shadow: none;
+}

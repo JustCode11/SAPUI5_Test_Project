@@ -19,6 +19,9 @@ sap.ui.define([
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.navTo("overview", true);
             }
+        },
+        getTable: function (id) {
+            return this.getView().byId(id);
         }
     })
 })

@@ -101,6 +101,11 @@
                     "pattern": "iconTabBarTest",
                     "name": "iconTabBarTest",
                     "target": "iconTabBarTest"
+                },
+                {
+                    "pattern": "tableTest",
+                    "name": "tableTest",
+                    "target": "tableTest"
                 }
             ],
             "targets": {
@@ -123,6 +128,10 @@
                 "iconTabBarTest": {
                     "id": "iconTabBarTest",
                     "name": "IconTabBarTest"
+                },
+                "tableTest": {
+                    "id": "tableTest",
+                    "name": "TableTest"
                 }
             }
         }

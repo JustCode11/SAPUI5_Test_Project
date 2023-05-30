@@ -2,25 +2,41 @@
 	xmlns="sap.m"
 	xmlns:c="sap.ui.core"
 >
-	<Table
-		id="posTable">
-        <headerToolbar>
-            <OverflowToolbar >
-                <Button text="Check Table" press="onSort"></Button>
-            </OverflowToolbar>
-        </headerToolbar>
-		<columns>
-			<Column>
-				<Text  text="Name"/>
-			</Column>
-			<Column>
-				<Text text="Age"/>
-			</Column>
-			<Column>
-				<Text text="Gender"/>
-			</Column>
-		</columns>
-		<items>
-		</items>
-	</Table>
+	<HBox
+		width="100%"
+		justifyContent="Center"
+	>
+		<FlexBox
+			width="90%"
+			justifyContent="Center"
+			alignItems="Center"
+		>
+			<Table
+				id="posTable"
+				mode="MultiSelect"
+			>
+				<headerToolbar>
+					<OverflowToolbar>
+						<Button
+							text="Löschen"
+							press="onDelete"
+						/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="40%">
+						<Text text="Name"/>
+					</Column>
+					<Column width="20%">
+						<Text text="Age"/>
+					</Column>
+					<Column width="40%">
+						<Text text="Gender"/>
+					</Column>
+				</columns>
+				<items>
+				</items>
+			</Table>
+		</FlexBox>
+	</HBox>
 </c:FragmentDefinition>

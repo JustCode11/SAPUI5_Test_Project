@@ -18,6 +18,9 @@ sap.ui.define([
         goToIconTabBarTest: function () {
             var oRouter = this.getRouter();
             oRouter.navTo("iconTabBarTest", true);
+        },
+        goToTableTest: function () {
+            this.getRouter().navTo("tableTest");
         }
     });
 });
