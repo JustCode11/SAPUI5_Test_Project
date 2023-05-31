@@ -1,10 +1,12 @@
 sap.ui.define([
-    "sap/ui/test/controller/BaseController"
-], function (BaseController) {
+    "sap/ui/test/controller/BaseController",
+    "sap/ui/model/json/JSONModel"
+], function (BaseController, JSONModel) {
     "use strict";
     return BaseController.extend("sap.ui.test.controller.TableTest", {
         onInit: function () {
-            var oModel = new sap.ui.model.json.JSONModel({
+            this._loadLocalModel();
+            var oModel = new JSONModel({
                 Employees: {
                     "Employee('01')": {
                         id: "01",
@@ -26,6 +28,13 @@ sap.ui.define([
             });
             var oTable = this.getView().byId("employeeTable");
             oTable.setModel(oModel, "emp");
+        },
+        _loadLocalModel: function () {
+            var oModel = new JSONModel({
+                selectedTabId: "",
+                numberOfSelectedItems: 0
+            });
+            this.getView().setModel(oModel, "LocalModel");
         },
         showPersonsBinding: function () {
             var oBinding = this.getView().byId("employeeTable").getBinding("items");
@@ -90,6 +99,33 @@ sap.ui.define([
                         oModel.refresh();
                     }
                 });
+            }
+        },
+        onSelectionChangeCompany: function (oEvent) {
+            var oTable = this.getView().byId("companyTable");
+            var localModel = this.getView().getModel("LocalModel");
+            var numberOfSelectedItems = localModel.getProperty("/numberOfSelectedItems");
+            var aSelectedItems = oTable.getSelectedItems();
+            localModel.setProperty("/numberOfSelectedItems", aSelectedItems.length);
+            console.log(oTable);
+            console.log(localModel);
+        },
+        confirmMarking: function (oEvent) {
+            var oTable = this.getView().byId("companyTable");
+            var aSelectedItems = oTable.getSelectedItems();
+            aSelectedItems.forEach(item => {
+                item.addStyleClass("marked");
+            });
+            oTable.removeSelections(true);
+        },
+        onToggle: function (oEvent) {
+            var oTable = this.getView().byId("companyTable");
+            if (oEvent.getSource().getPressed()) {
+                console.log(oTable);
+
+                debugger;
+            } else {
+                console.log("unpressed");
             }
         }
     });

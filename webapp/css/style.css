@@ -14,3 +14,7 @@
 .sapMITH {
     box-shadow: none;
 }
+
+.sapMLIB.marked .sapMText {
+    color: green !important;
+}

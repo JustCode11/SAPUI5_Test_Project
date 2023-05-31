@@ -60,6 +60,7 @@
 		class="sapUiResponsiveMargin"
 		width="auto"
 		mode="MultiSelect"
+		selectionChange="onSelectionChangeCompany"
 		items="{company>/CompanySet/Companies}"
 	>
 		<headerToolbar>
@@ -72,6 +73,16 @@
 				<Button
 					text="Show Selected Items"
 					press=".showCompanyItems"
+				/>
+				<ToolbarSpacer/>
+				<ToggleButton
+					text="Show all marked rows"
+					press="onToggle"
+				/>
+				<Button
+					icon="sap-icon://accept"
+					press="confirmMarking"
+					enabled="{= ${LocalModel>/numberOfSelectedItems} > 0}"
 				/>
 			</OverflowToolbar>
 		</headerToolbar>
