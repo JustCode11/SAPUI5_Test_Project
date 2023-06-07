@@ -59,6 +59,21 @@ sap.ui.define([
             console.log(oModel)
             console.log(aTableData)
             console.log(aDescription);
+
+            /*
+            var myObject = { 
+            property1: 'value1',
+            property2: 'value2',
+            property3: 'value3'
+            };
+
+            for (var key in myObject) {
+            if (myObject.hasOwnProperty(key)) {
+                var value = myObject[key];
+                // Do something with the property value
+                console.log(value);
+            }
+            }*/
         },
         showCompanyBinding: function () {
             console.log("Company");
