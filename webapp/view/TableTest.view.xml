@@ -17,6 +17,10 @@
 					text="Show Binding"
 					press=".showPersonsBinding"
 				/>
+				<Button
+					text="Show Array of Email"
+					press=".createArray"
+				/>
 			</OverflowToolbar>
 		</headerToolbar>
 		<columns>

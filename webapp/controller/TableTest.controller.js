@@ -44,6 +44,22 @@ sap.ui.define([
             var oGetModel = this.getView().byId("employeeTable").getModel("emp");
             console.log(oGetModel);
         },
+        createArray: function () {
+            var oTable = this.byId("employeeTable");
+            var oModel = oTable.getModel("emp");
+            var aTableData = oModel.getProperty("/Employees");
+            aTableData = Object.values(aTableData);
+            var aDescription = [];
+            for (var i = 0; i < aTableData.length; i++) {
+                var sDescription = aTableData[i].email;
+                console.log(sDescription);
+                aDescription.push(sDescription);
+            }
+            console.log(oTable)
+            console.log(oModel)
+            console.log(aTableData)
+            console.log(aDescription);
+        },
         showCompanyBinding: function () {
             console.log("Company");
         },
@@ -102,6 +118,7 @@ sap.ui.define([
             }
         },
         onSelectionChangeCompany: function (oEvent) {
+            debugger;
             var oTable = this.getView().byId("companyTable");
             var localModel = this.getView().getModel("LocalModel");
             var numberOfSelectedItems = localModel.getProperty("/numberOfSelectedItems");
@@ -109,6 +126,10 @@ sap.ui.define([
             localModel.setProperty("/numberOfSelectedItems", aSelectedItems.length);
             console.log(oTable);
             console.log(localModel);
+            var oSource = oEvent.getSource();
+            var oBindingContext = oSource.getBindingContext("company");
+            var oEntity = oBindingContext.getObject();
+            console.log(oEntity);
         },
         confirmMarking: function (oEvent) {
             var oTable = this.getView().byId("companyTable");
@@ -120,10 +141,13 @@ sap.ui.define([
         },
         onToggle: function (oEvent) {
             var oTable = this.getView().byId("companyTable");
+            var aItems = oTable.getItems();
             if (oEvent.getSource().getPressed()) {
-                console.log(oTable);
+                aItems.forEach((item) => {
+                    if (item.hasStyleClass("marked")) {
 
-                debugger;
+                    }
+                })
             } else {
                 console.log("unpressed");
             }
