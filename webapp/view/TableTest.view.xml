@@ -2,6 +2,7 @@
 	controllerName="sap.ui.test.controller.TableTest"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
 >
 	<Table
 		id="employeeTable"
@@ -70,6 +71,24 @@
 		<headerToolbar>
 			<OverflowToolbar>
 				<Title text="Companies"/>
+				<Input
+					id="companyInput"
+					placeholder="Search for a City"
+					showSuggestion="true"
+					liveChange="filterCityList"
+					suggestionItems="{
+						localModel>/filteredCities
+					}"
+					suggestionItemSelected="onSuggestionCompanySelected"
+					width="20%"
+				>
+					<suggestionItems>
+						<core:ListItem
+							key="{localModel>City}"
+							text="{localModel>City}"
+						/>
+					</suggestionItems>
+				</Input>
 				<Button
 					text="Show Binding"
 					press=".showCompanyBinding"

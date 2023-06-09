@@ -1,7 +1,10 @@
 sap.ui.define([
     "sap/ui/test/controller/BaseController",
-    "sap/ui/model/json/JSONModel"
-], function (BaseController, JSONModel) {
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/Filter"
+], function (BaseController,
+    JSONModel,
+    Filter) {
     "use strict";
     return BaseController.extend("sap.ui.test.controller.TableTest", {
         onInit: function () {
@@ -28,6 +31,13 @@ sap.ui.define([
             });
             var oTable = this.getView().byId("employeeTable");
             oTable.setModel(oModel, "emp");
+            var localModel = new JSONModel({
+                filteredCities: {
+                    City: "London",
+                    City: "New York"
+                }
+            }, "localModel");
+            this.getView().setModel(localModel);
         },
         _loadLocalModel: function () {
             var oModel = new JSONModel({
@@ -166,6 +176,30 @@ sap.ui.define([
             } else {
                 console.log("unpressed");
             }
+        },
+        onSuggestionCompanySelected: function (oEvent) {
+            var selectedItem = oEvent.getParameter("selectedItem");
+            if (selectedItem !== null) {
+                var selectedCity = selectedItem.getKey();
+                var oTable = this.getView().byId("companyTable");
+                var oBinding = oTable.getBinding("items");
+                oBinding.filter(new Filter("City", "EQ", selectedCity));
+            }
+        },
+        onSuggestCompany: function (oEvent) {
+            var sTerm = oEvent.getParameter("suggestValue");
+            var aFilters = [];
+            if (sTerm) {
+                aFilters.push(new Filter("City", "StartsWith", sTerm));
+            }
+
+            oEvent.getSource().getBinding("suggestionItems").filter(aFilters);
+        },
+        filterCityList: function () {
+            var companyModel = this.getView().getModel("company");
+            var companyList = companyModel.getProperty("/CompanySet/Companies");
+            var uniqueNames = [];
+            console.log(companyList);
         }
     });
 });

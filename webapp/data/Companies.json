@@ -84,6 +84,15 @@
                         "Currency": "USD"
                     }
                 }
+            },
+            "Company('308')": {
+                "Id": "308",
+                "Name": "Company D",
+                "Street": "Company D Street",
+                "Number": "8",
+                "City": "New York",
+                "NumberOfProducts": "4",
+                "ToProducts": {}
             }
         }
     }
