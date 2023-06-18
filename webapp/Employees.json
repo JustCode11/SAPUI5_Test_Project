@@ -7,7 +7,8 @@
             "email": "jpenddreth0@census.gov",
             "gender": "Female",
             "ip_address": "26.58.193.2",
-            "status": "work"
+            "status": "work",
+            "marked": "false"
         },
         {
             "id": 2,
@@ -16,7 +17,8 @@
             "email": "gfrediani1@senate.gov",
             "gender": "Male",
             "ip_address": "229.179.4.212",
-            "status": "work"
+            "status": "work",
+            "marked": "false"
         },
         {
             "id": 3,
@@ -25,7 +27,8 @@
             "email": "nbea2@imageshack.us",
             "gender": "Female",
             "ip_address": "180.66.162.255",
-            "status": "vacation"
+            "status": "vacation",
+            "marked": "false"
         },
         {
             "id": 4,
@@ -34,7 +37,8 @@
             "email": "wvalek3@vk.com",
             "gender": "Male",
             "ip_address": "67.76.188.26",
-            "status": "ill"
+            "status": "ill",
+            "marked": "false"
         }
     ]
 }

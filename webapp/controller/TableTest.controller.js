@@ -200,6 +200,17 @@ sap.ui.define([
             var companyList = companyModel.getProperty("/CompanySet/Companies");
             var uniqueNames = [];
             console.log(companyList);
+        },
+        onMarkEmployee: function (oEvent) {
+            var oTable = this.getView().byId("employeeTable");
+            var oItem = oEvent.getParameter("selectedItem");
+            var oCtx = oEvent.getSource().getBindingContext("emp");
+            var pressedItem = oTable.getModel("emp").getProperty(oCtx.getPath());
+            //var oModel = this.getOwnerComponent().getModel("emp");
+            console.log(oTable.getItems());
+            console.log(oItem);
+            console.log(pressedItem);
+            //console.log(oModel.getProperty(oCtx.getPath()));
         }
     });
 });

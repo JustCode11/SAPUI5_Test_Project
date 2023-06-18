@@ -18,3 +18,16 @@
 .sapMLIB.marked .sapMText {
     color: green !important;
 }
+
+.largeTableToolbar {
+    height: 3.75rem !important;
+}
+
+.sapMTableTH {
+    top: 3.75rem !important;
+}
+
+.largeTableContainer {
+    width: 90%;
+    border-radius: 5px;
+}

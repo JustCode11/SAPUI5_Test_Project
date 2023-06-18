@@ -11,6 +11,10 @@
 				press=".onOpenEmployeeForm"
 			/>
 			<Button
+				text="Go to Large Table"
+				press=".goToLargeTablePage"
+			/>
+			<Button
 				text="Go to Test Page"
 				press=".goToTestPage"
 			/>

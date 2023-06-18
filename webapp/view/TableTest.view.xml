@@ -43,6 +43,7 @@
 			<Column>
 				<Text text="IP Address"/>
 			</Column>
+			<Column/>
 		</columns>
 		<items>
 			<ColumnListItem
@@ -56,6 +57,12 @@
 					<Text text="{emp>email}"/>
 					<Text text="{emp>gender}"/>
 					<Text text="{emp>ip_address}"/>
+					<core:Icon
+						src="sap-icon://status-positive"
+						press="onMarkEmployee"
+						activeColor="{= ${emp>marked} ? 'Positive' : 'Default'}"
+						size="{= ${emp>marked} ? '1.5rem' : '1rem'}"
+					/>
 				</cells>
 			</ColumnListItem>
 		</items>

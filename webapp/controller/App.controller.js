@@ -21,6 +21,9 @@ sap.ui.define([
         },
         goToTableTest: function () {
             this.getRouter().navTo("tableTest");
+        },
+        goToLargeTablePage: function () {
+            this.getRouter().navTo("largeTable");
         }
     });
 });

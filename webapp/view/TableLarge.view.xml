@@ -1,0 +1,66 @@
+<mvc:View
+	controllerName="sap.ui.test.controller.TableLarge"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page
+		id="TableLargePage"
+		title="{i18n>tableLargePageTitle}"
+		backgroundDesign="Solid"
+		navButtonTooltip="Go back"
+		showNavButton="true"
+		navButtonPress="goBack"
+		titleAlignment="Center"
+		titleLevel="H1"
+	>
+		<FlexBox class="largeTableContainer">
+			<ScrollContainer>
+				<Table
+					id="largeTable"
+					items="{large>/Sheet1}"
+					growing="true"
+					sticky="HeaderToolbar,ColumnHeaders"
+					growingThreshold="50"
+					growingScrollToLoad="true"
+				>
+					<headerToolbar>
+						<OverflowToolbar class="largeTableToolbar">
+							<SearchField width="80%"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Text text="Serial Number"/>
+						</Column>
+						<Column>
+							<Text text="CompanyName"/>
+						</Column>
+						<Column>
+							<Text text="Employee Markme"/>
+						</Column>
+						<Column>
+							<Text text="Description"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{large>Serial Number}"/>
+								<Text text="{large>Company Name}"/>
+								<Text text="{large>Employee Markme}"/>
+								<Text text="{large>Description}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</ScrollContainer>
+		</FlexBox>
+	</Page>
+</mvc:View>
+<!--
+	"Serial Number": "9788189999599",
+            "Company Name": "TALES OF SHIVA",
+            "Employee Markme": "Mark",
+            "Description": "mark",
+            "Leave": "0"
+-->
